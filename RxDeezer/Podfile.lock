@@ -1,0 +1,23 @@
+PODS:
+  - Alamofire (4.7.2)
+  - RxBlocking (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+  - RxTest (4.1.2):
+    - RxSwift (~> 4.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - RxBlocking (~> 4.0)
+  - RxSwift (~> 4.0)
+  - RxTest (~> 4.0)
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  RxBlocking: f6054985901412fc8c02daa84e92d4ba68c61389
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  RxTest: e634f15fd2c2cd0e0120132ef7a4f7be69ad0393
+
+PODFILE CHECKSUM: e0f50cbec61bc6d5feec7a47a42a1b979d366e2a
+
+COCOAPODS: 1.4.0
