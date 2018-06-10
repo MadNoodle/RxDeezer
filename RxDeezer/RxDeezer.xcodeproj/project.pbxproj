@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		228718548D4FADBCA4809907 /* Pods_RxDeezer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91EB4E3D1F622368999583B0 /* Pods_RxDeezer.framework */; };
+		5B6FA0845A516FBD10C9274A /* Pods_RxDeezerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09E113F8FCC2C69056E3C37 /* Pods_RxDeezerUITests.framework */; };
+		B7CACC4EE6163DF1622DFF97 /* Pods_RxDeezerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE061A9CE9444EB552FCA85 /* Pods_RxDeezerTests.framework */; };
 		B93BB07D20CBB22F00C01345 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93BB07C20CBB22F00C01345 /* AppDelegate.swift */; };
-		B93BB07F20CBB22F00C01345 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93BB07E20CBB22F00C01345 /* ViewController.swift */; };
 		B93BB08420CBB23000C01345 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B93BB08320CBB23000C01345 /* Assets.xcassets */; };
 		B93BB08720CBB23000C01345 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B93BB08520CBB23000C01345 /* LaunchScreen.storyboard */; };
 		B93BB09220CBB23000C01345 /* RxDeezerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93BB09120CBB23000C01345 /* RxDeezerTests.swift */; };
@@ -16,6 +18,10 @@
 		B93BB0AD20CBB8DB00C01345 /* PlaylistDisplayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93BB0AB20CBB8DB00C01345 /* PlaylistDisplayerViewController.swift */; };
 		B93BB0AE20CBB8DB00C01345 /* PlaylistDisplayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B93BB0AC20CBB8DB00C01345 /* PlaylistDisplayerViewController.xib */; };
 		B93BB0B120CBB97400C01345 /* PlaylistDisplayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93BB0B020CBB97400C01345 /* PlaylistDisplayerViewModel.swift */; };
+		B93BB0FA20CC1F0500C01345 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93BB0F920CC1F0500C01345 /* Request.swift */; };
+		B93BB0FC20CC1F3600C01345 /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93BB0FB20CC1F3600C01345 /* NetworkDispatcher.swift */; };
+		B93FFAFE20CD4CEB008652E3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93FFAFD20CD4CEB008652E3 /* Constants.swift */; };
+		B93FFB0320CD5510008652E3 /* PlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93FFB0220CD5510008652E3 /* PlaylistCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +46,10 @@
 		66E8C0185004A24B35712CD8 /* Pods-RxDeezerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDeezerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxDeezerUITests/Pods-RxDeezerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7A66B35A5FAF87FE912ED24C /* Pods-RxDeezerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDeezerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxDeezerTests/Pods-RxDeezerTests.release.xcconfig"; sourceTree = "<group>"; };
 		7F50A483F073B66AF57E1C71 /* Pods-RxDeezerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDeezerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxDeezerTests/Pods-RxDeezerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		91EB4E3D1F622368999583B0 /* Pods_RxDeezer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxDeezer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABB90213B48A565D208CFE0 /* Pods-RxDeezer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDeezer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxDeezer/Pods-RxDeezer.debug.xcconfig"; sourceTree = "<group>"; };
 		B93BB07920CBB22F00C01345 /* RxDeezer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxDeezer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93BB07C20CBB22F00C01345 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B93BB07E20CBB22F00C01345 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B93BB08320CBB23000C01345 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B93BB08620CBB23000C01345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B93BB08820CBB23000C01345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +62,12 @@
 		B93BB0AB20CBB8DB00C01345 /* PlaylistDisplayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDisplayerViewController.swift; sourceTree = "<group>"; };
 		B93BB0AC20CBB8DB00C01345 /* PlaylistDisplayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistDisplayerViewController.xib; sourceTree = "<group>"; };
 		B93BB0B020CBB97400C01345 /* PlaylistDisplayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDisplayerViewModel.swift; sourceTree = "<group>"; };
+		B93BB0F920CC1F0500C01345 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		B93BB0FB20CC1F3600C01345 /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
+		B93FFAFD20CD4CEB008652E3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B93FFB0220CD5510008652E3 /* PlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCell.swift; sourceTree = "<group>"; };
+		C09E113F8FCC2C69056E3C37 /* Pods_RxDeezerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxDeezerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDE061A9CE9444EB552FCA85 /* Pods_RxDeezerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxDeezerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8ABC7E0E2DDF96AD4E53830 /* Pods-RxDeezerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxDeezerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxDeezerUITests/Pods-RxDeezerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				228718548D4FADBCA4809907 /* Pods_RxDeezer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7CACC4EE6163DF1622DFF97 /* Pods_RxDeezerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,12 +92,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6FA0845A516FBD10C9274A /* Pods_RxDeezerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79A6E8F12C72975E1366E987 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91EB4E3D1F622368999583B0 /* Pods_RxDeezer.framework */,
+				CDE061A9CE9444EB552FCA85 /* Pods_RxDeezerTests.framework */,
+				C09E113F8FCC2C69056E3C37 /* Pods_RxDeezerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		84F5ED01A69159485F28F9C6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +130,7 @@
 				B93BB09B20CBB23000C01345 /* RxDeezerUITests */,
 				B93BB07A20CBB22F00C01345 /* Products */,
 				84F5ED01A69159485F28F9C6 /* Pods */,
+				79A6E8F12C72975E1366E987 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,9 +148,10 @@
 			isa = PBXGroup;
 			children = (
 				B93BB0AA20CBB23900C01345 /* SupportingFiles */,
-				B93BB07E20CBB22F00C01345 /* ViewController.swift */,
 				B93BB08820CBB23000C01345 /* Info.plist */,
 				B93BB0AF20CBB94500C01345 /* PlaylistDisplayer */,
+				B93BB0EC20CBDC3F00C01345 /* NetworkingLayer */,
+				B93FFAFD20CD4CEB008652E3 /* Constants.swift */,
 			);
 			path = RxDeezer;
 			sourceTree = "<group>";
@@ -160,11 +187,29 @@
 		B93BB0AF20CBB94500C01345 /* PlaylistDisplayer */ = {
 			isa = PBXGroup;
 			children = (
+				B93FFAFF20CD51CC008652E3 /* Helpers */,
 				B93BB0AB20CBB8DB00C01345 /* PlaylistDisplayerViewController.swift */,
 				B93BB0AC20CBB8DB00C01345 /* PlaylistDisplayerViewController.xib */,
 				B93BB0B020CBB97400C01345 /* PlaylistDisplayerViewModel.swift */,
 			);
 			path = PlaylistDisplayer;
+			sourceTree = "<group>";
+		};
+		B93BB0EC20CBDC3F00C01345 /* NetworkingLayer */ = {
+			isa = PBXGroup;
+			children = (
+				B93BB0F920CC1F0500C01345 /* Request.swift */,
+				B93BB0FB20CC1F3600C01345 /* NetworkDispatcher.swift */,
+			);
+			path = NetworkingLayer;
+			sourceTree = "<group>";
+		};
+		B93FFAFF20CD51CC008652E3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B93FFB0220CD5510008652E3 /* PlaylistCell.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,7 +512,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B93BB0B120CBB97400C01345 /* PlaylistDisplayerViewModel.swift in Sources */,
-				B93BB07F20CBB22F00C01345 /* ViewController.swift in Sources */,
+				B93FFB0320CD5510008652E3 /* PlaylistCell.swift in Sources */,
+				B93BB0FA20CC1F0500C01345 /* Request.swift in Sources */,
+				B93BB0FC20CC1F3600C01345 /* NetworkDispatcher.swift in Sources */,
+				B93FFAFE20CD4CEB008652E3 /* Constants.swift in Sources */,
 				B93BB07D20CBB22F00C01345 /* AppDelegate.swift in Sources */,
 				B93BB0AD20CBB8DB00C01345 /* PlaylistDisplayerViewController.swift in Sources */,
 			);
@@ -648,7 +696,6 @@
 					"\"Alamofire\"",
 					"-framework",
 					"\"RxSwift\"",
-					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mathieujanneau.RxDeezer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -675,7 +722,6 @@
 					"\"Alamofire\"",
 					"-framework",
 					"\"RxSwift\"",
-					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mathieujanneau.RxDeezer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
