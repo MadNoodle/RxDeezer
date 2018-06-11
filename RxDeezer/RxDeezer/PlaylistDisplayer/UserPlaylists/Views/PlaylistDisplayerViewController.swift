@@ -16,6 +16,7 @@ class PlaylistDisplayerViewController: UIViewController {
   let disposeBag = DisposeBag()
   var playlists = [Playlist]()
   var tracks = [Track]()
+  var selectedPlaylist: Observable<Playlist>?
   let offset: CGFloat = 60
   let reuseId = "cell"
   var trackList = Variable<String?>("")
@@ -95,7 +96,7 @@ extension PlaylistDisplayerViewController: UICollectionViewDataSource, UICollect
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     // Send selected playlist tracklist url to viewModel
     viewModel.tracklistUrl.value = playlists[indexPath.row].trackList
-    
+    selectedPlaylist = Observable<Playlist>.just(playlists[indexPath.row])
   }
   
   func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

@@ -74,12 +74,18 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
   }()
 
   var tracks = [Track]()
-  let viewModel = PlaylistDisplayerViewModel.shared 
+  let viewModel = PlaylistDisplayerViewModel.shared
+  let playlistCollectionController = PlaylistDisplayerViewController()
   let disposeBag = DisposeBag()
   // MARK: - LIFECYCLE METHODS
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    playlistCollectionController.selectedPlaylist?.subscribe(onNext: { [weak self] playlist in
+      self?.playlistHeader.load(urlString: playlist.smallPictureUrl)
+      self?.playlistTitle.text = playlist.title
+      self?.playlistCreator.text = playlist.creator
+      self?.playlistDuration.text = playlist.duration
+    }).disposed(by: disposeBag)
     // Grab trackList for the selected playlist
     viewModel.tracklistData.asObservable()
       .subscribe(onNext: { [weak self] audioTracks in
@@ -89,7 +95,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         }
       })
       .disposed(by: disposeBag)
-
+    
     
     view.addSubview(scrollView)
     setupScrollView()
