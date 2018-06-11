@@ -12,87 +12,74 @@ import Alamofire
 
 class PlaylistDisplayerViewController: UIViewController {
   
-  let viewModel = PlaylistDisplayerViewModel(request: Constants.uniqueUserUrl)
+  let viewModel = PlaylistDisplayerViewModel.shared // Refactor pour ne pas avoir besoin de rentrer un user et le mettre dans une constante
   let disposeBag = DisposeBag()
   var playlists = [Playlist]()
+  var tracks = [Track]()
   let offset: CGFloat = 60
   let reuseId = "cell"
+  var trackList = Variable<String?>("")
   
-  lazy var toolBar: UIView = {
-    let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: offset)
-    let _toolBar = UIView(frame: frame)
-    let title = UILabel()
-    title.frame = _toolBar.frame
-    title.text = "Playlists"
-    title.textAlignment = .center
-    _toolBar.addSubview(title)
+  @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak var buttonContainer: UIView!
+  @IBOutlet weak var buttonHeigth: NSLayoutConstraint!
+  @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
+  @IBOutlet weak var tableView: UITableView!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    configureDataBinding()
+  }
+  
+  func configureDataBinding() {
     
-    return _toolBar
-  }()
+    // Load user's playlists
+    viewModel.playlistData.asObservable()
+      .subscribe(onNext: { [weak self] userPlaylists in
+        self?.playlists = userPlaylists
+        self?.configureCollectionView()
+      })
+      .disposed(by: disposeBag)
+    
+    
+  }
   
-  lazy var collectionView : UICollectionView = {
-    let layout = UICollectionViewFlowLayout()
-    let collectionFrame = CGRect(x: 0, y: offset, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - offset)
-    let _collectionView = UICollectionView(frame: collectionFrame, collectionViewLayout: layout)
-    _collectionView.backgroundColor = .white
-    return _collectionView
-  }()
-  
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-      // parses playlists
-      
-      // parses tracks for playlists
-      //viewModel.parse(urlRequest: "https://api.deezer.com/playlist/160504851/tracks", type: .tracklist)
-      
-      viewModel.playlistData.asObservable()
-        .subscribe(onNext: { [weak self] userPlaylists in
-          self?.playlists = userPlaylists
-          self?.configureCollectionView()
-        })
-        .disposed(by: disposeBag)
-      
-
-    }
-
   func configureCollectionView() {
-    self.view.addSubview(toolBar)
     self.view.addSubview(collectionView)
     collectionView.delegate = self
     collectionView.dataSource = self
     collectionView.register(PlaylistCell.self, forCellWithReuseIdentifier: reuseId)
     collectionView.reloadData()
   }
-
+  
+  
 }
 
 extension PlaylistDisplayerViewController: UICollectionViewDelegateFlowLayout {
+  
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
     return UIEdgeInsets.zero
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    return 0
+    return 1
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    return 0
+    return 1
   }
+  
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    
-    let totalHeight: CGFloat = (self.view.frame.width / 3) + offset
-    let totalWidth: CGFloat = (self.view.frame.width / 3)
-    
-    
+    let totalHeight: CGFloat = (self.view.frame.width / 3) + offset - 1
+    let totalWidth: CGFloat = (self.view.frame.width / 3) - 1
     return CGSize(width: totalWidth, height: totalHeight)
   }
+
 }
 
 extension PlaylistDisplayerViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    print(playlists.count)
     return playlists.count
   }
   
@@ -101,32 +88,29 @@ extension PlaylistDisplayerViewController: UICollectionViewDataSource, UICollect
     
     let currentPlaylist = playlists[indexPath.row]
     configure(cell, for: currentPlaylist)
- 
+    
     return cell!
   }
-
+  
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let currentPlaylist = playlists[indexPath.row]
-    viewModel.parse(urlRequest: currentPlaylist.trackList, type: .tracklist)
-    // binder la cell avec tracklist
+    // Send selected playlist tracklist url to viewModel
+    viewModel.tracklistUrl.value = playlists[indexPath.row].trackList
     
   }
-
+  
+  func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    collectionViewBottomConstraint.constant = 0
+  }
+  
   func configure(_ cell: PlaylistCell?, for currentPlaylist: Playlist) {
     
     cell?.titleLabel.text = currentPlaylist.title
     cell?.titleLabel.frame = CGRect(x: 0, y: (cell?.contentView.frame.height)! - offset, width: (cell?.contentView.frame.width)!, height: offset)
-    do {
-      if let url = URL(string: currentPlaylist.smallPictureUrl){
-        let data = try Data(contentsOf: url)
-        cell?.thumbnailView.image = UIImage(data: data)
+   
+        cell?.thumbnailView.load(urlString: currentPlaylist.smallPictureUrl)
         
-      }
-    }
-    catch{
-      print(error)
-    }
+    
     cell?.thumbnailView.frame = CGRect(x: 0, y: 0, width: (cell?.contentView.frame.width)!, height: (cell?.contentView.frame.width)!)
   }
- 
+  
 }

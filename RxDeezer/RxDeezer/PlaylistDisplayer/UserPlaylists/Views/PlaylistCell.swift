@@ -18,6 +18,8 @@ class PlaylistCell: UICollectionViewCell {
   
   var thumbnailView : UIImageView = {
     let _thumbnailView = UIImageView()
+    _thumbnailView.layer.cornerRadius = 20.0
+    _thumbnailView.layer.masksToBounds = true
     // Preserve the image aspect ratio
     _thumbnailView.contentMode = .scaleAspectFill
     return _thumbnailView

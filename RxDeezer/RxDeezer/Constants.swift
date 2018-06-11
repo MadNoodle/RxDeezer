@@ -9,5 +9,28 @@
 import Foundation
 
 struct Constants {
-  static let uniqueUserUrl = "https://api.deezer.com/user/2529/playlists"
+ 
+ 
+    struct ProductionServer {
+      static let baseURL =  "https://api.deezer.com/"
+      static let appId = "282964"
+      static let appSecret =  "7c28f134dfeff5dbf613959695f95f94"
+    }
+  
+    struct APIParameterKey {
+      static let userId = "userId"
+      static let id = "id"
+    }
+  }
+  
+  enum HTTPHeaderField: String {
+    case authentication = "Authorization"
+    case contentType = "Content-Type"
+    case acceptType = "Accept"
+    case acceptEncoding = "Accept-Encoding"
+  }
+  
+  enum ContentType: String {
+    case json = "application/json"
+  
 }
