@@ -26,9 +26,9 @@ extension UIImageView {
       self.image = imageFromCache
       return
     }
-    
+    guard let imageUrl = url else { return}
     // Fetch image from remote
-    let task = URLSession.shared.dataTask(with: url!) { (data, _, error) in
+    let task = URLSession.shared.dataTask(with: imageUrl) { (data, _, error) in
       // send to bg queue
       DispatchQueue.main.async {
         // unwrap image as data

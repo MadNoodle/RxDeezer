@@ -5,38 +5,30 @@
 //  Created by Mathieu Janneau on 11/06/2018.
 //  Copyright © 2018 Mathieu Janneau. All rights reserved.
 //
-// To parse the JSON, add this file to your project and do:
-//
-//   let deezerTracks = try? JSONDecoder().decode(DeezerTracks.self, from: jsonData)
-//
-// To parse values from Alamofire responses:
-//
-//   Alamofire.request(url).responseDeezerTracks { response in
-//     if let deezerTracks = response.result.value {
-//       ...
-//     }
-//   }
 
 import Foundation
-import Alamofire
 
 
-struct Track {
-  var title: String = ""
-  init?(json: [String:Any]) {
-    if let newTitle = json["title"] as? String {
-      self.title = newTitle
-    }
-  }
-}
-
+/// Model Object For Playlist.
+/// Properties are Mapped from Deezer user playlist
+/// Example json fetching url: https://api.deezer.com/user/2529/playlists
+/// Documentation URL : https://developers.deezer.com/api
 struct Playlist{
+  
+  /// Title of the playlist
   var title: String = ""
+  /// Url of playlist's cover picture
   var pictureUrl: String = ""
+  /// Url of playlist's cover picture thumbnail
   var smallPictureUrl: String = ""
+  /// Url for playlist's list of tracks
   var trackList: String = ""
+  /// Playlist's owner
   var creator: String = ""
+  /// Total duration ( format hh:mm:ss)
   var duration: String = ""
+  
+  /// Failable initializer
   init?(json: [String:Any]) {
     
     if let newTitle = json["title"] as? String {
@@ -59,6 +51,7 @@ struct Playlist{
       }
     }
     if let newDuration = json["duration"] as? Int {
+      // convert from to int to display format hh:mm:ss
       self.duration = newDuration.secondsToHoursMinutesSeconds()
     }
     

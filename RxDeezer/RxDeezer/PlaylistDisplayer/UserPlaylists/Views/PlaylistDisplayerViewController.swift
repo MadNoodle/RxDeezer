@@ -8,32 +8,38 @@
 
 import UIKit
 import RxSwift
-import Alamofire
+
 
 class PlaylistDisplayerViewController: UIViewController {
   
-  let viewModel = PlaylistDisplayerViewModel.shared // Refactor pour ne pas avoir besoin de rentrer un user et le mettre dans une constante
+  // MARK: - DATA PROPERTIES
+  
+  /// Common View Model Instance to fetch and exchange data
+  let viewModel = PlaylistDisplayerViewModel.shared
+  /// Gather observable Disposables and dealloc them when needed
   let disposeBag = DisposeBag()
+  /// Array that stores Playlist before displaying them in collection
   var playlists = [Playlist]()
-  var tracks = [Track]()
-  var selectedPlaylist: Observable<Playlist>?
-  let offset: CGFloat = 60
-  let reuseId = "cell"
+  /// Variable used to emit data when user select a playlist
   var trackList = Variable<String?>("")
   
-  @IBOutlet weak var collectionView: UICollectionView!
-  @IBOutlet weak var buttonContainer: UIView!
-  @IBOutlet weak var buttonHeigth: NSLayoutConstraint!
-  @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
-  @IBOutlet weak var tableView: UITableView!
+  // MARK: - UI PROPERTIES
+  let offset: CGFloat = 60
+  let reuseId = "cell"
   
+  // MARK: - OUTLETS
+  @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
+  
+  
+  // MARK: - VIEW LIFECYCLE METHODS
   override func viewDidLoad() {
     super.viewDidLoad()
     configureDataBinding()
   }
   
+  /// Initiate listening to ViewModel Variable to fetch data from remote server( Deezer)
   func configureDataBinding() {
-    
     // Load user's playlists
     viewModel.playlistData.asObservable()
       .subscribe(onNext: { [weak self] userPlaylists in
@@ -41,10 +47,9 @@ class PlaylistDisplayerViewController: UIViewController {
         self?.configureCollectionView()
       })
       .disposed(by: disposeBag)
-    
-    
   }
   
+  /// handle collection view setup ( delegation, datasource, UI)
   func configureCollectionView() {
     self.view.addSubview(collectionView)
     collectionView.delegate = self
@@ -56,6 +61,7 @@ class PlaylistDisplayerViewController: UIViewController {
   
 }
 
+// MARK: - FLOW LAYOUT DELEGATE
 extension PlaylistDisplayerViewController: UICollectionViewDelegateFlowLayout {
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -75,9 +81,10 @@ extension PlaylistDisplayerViewController: UICollectionViewDelegateFlowLayout {
     let totalWidth: CGFloat = (self.view.frame.width / 3) - 1
     return CGSize(width: totalWidth, height: totalHeight)
   }
-
+  
 }
 
+// MARK: - COLLECTIONVIEW DELEGATE AND DATASOURCE METHODS
 extension PlaylistDisplayerViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -85,33 +92,28 @@ extension PlaylistDisplayerViewController: UICollectionViewDataSource, UICollect
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    // load custom cell
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as? PlaylistCell
-    
+    // fetch and display data
     let currentPlaylist = playlists[indexPath.row]
     configure(cell, for: currentPlaylist)
-    
     return cell!
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    // Send selected playlist tracklist url to viewModel
-    viewModel.tracklistUrl.value = playlists[indexPath.row].trackList
-    selectedPlaylist = Observable<Playlist>.just(playlists[indexPath.row])
+    // Assign a new Value to View Model Variable<Playlist> for current playlist
+    viewModel.selectedPlaylist.value = playlists[indexPath.row]
   }
   
-  func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-    collectionViewBottomConstraint.constant = 0
-  }
   
   func configure(_ cell: PlaylistCell?, for currentPlaylist: Playlist) {
     
     cell?.titleLabel.text = currentPlaylist.title
     cell?.titleLabel.frame = CGRect(x: 0, y: (cell?.contentView.frame.height)! - offset, width: (cell?.contentView.frame.width)!, height: offset)
-   
-        cell?.thumbnailView.load(urlString: currentPlaylist.smallPictureUrl)
-        
+    // Load and cache Cover image
+    cell?.thumbnailView.load(urlString: currentPlaylist.smallPictureUrl)
+    // Customize thumbnail frame size in collection size
     
-    cell?.thumbnailView.frame = CGRect(x: 0, y: 0, width: (cell?.contentView.frame.width)!, height: (cell?.contentView.frame.width)!)
   }
   
 }

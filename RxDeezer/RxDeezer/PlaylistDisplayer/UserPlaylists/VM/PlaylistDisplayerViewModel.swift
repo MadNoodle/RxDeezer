@@ -8,56 +8,56 @@
 
 import Foundation
 import RxSwift
-import Alamofire
 
 class PlaylistDisplayerViewModel: NSObject {
+  
+  // MARK: - PROPERTIES
+  /// entrance point for singleton pattern
   static let shared = PlaylistDisplayerViewModel()
-  let userId = "2529"
+  /// Bag that stores All disposables and dealloc them if neeeded
   let disposeBag = DisposeBag()
   var playlistData = Variable<[Playlist]>([])
-  var tracklistUrl = Variable<String>("")
+  var selectedPlaylist = Variable<Playlist>(Playlist(json: ["":""])!)
   var tracklistData = Variable<[Track]>([])
-  var tracks: Observable<[Track]>!
   
+  
+  
+  /// Private initializer to match singleton pattern
   override private init() {
     super.init()
-    
+    startObserving()
+  }
   
-    requestPlaylist(for: userId)
+  private func startObserving() {
+    // fetch data for user
+    requestPlaylist(for: Constants.DevConfig.userId)
       .subscribe( onNext: {
         [weak self] dataList in
         self?.playlistData.value = dataList
       }).disposed(by: disposeBag)
     
-    tracklistData.asObservable().subscribe { [weak self] data in
-      self?.tracks = Observable.just(data.element!)
-    }.disposed(by: disposeBag)
-
-    tracklistUrl.asObservable()
-      .subscribe(onNext: { [weak self] url in
-       
-        APIClient.getTracks(for: url) { data in
-          
+    // Initialize selected playlist behavior in PlaylistCollection controller
+    selectedPlaylist.asObservable()
+      .subscribe(onNext: { [weak self] playlist in
+        // fetch tracks from deezer and store them in tracklistDat VAriable
+        APIClient.getTracks(for: playlist.trackList) { data in
           self?.tracklistData.value = data
-         
         }
       }).disposed(by: disposeBag)
-   
-    
     
   }
   
-  public func requestPlaylist(for user: String) -> Observable<[Playlist]> {
+  private func requestPlaylist(for user: String) -> Observable<[Playlist]> {
     return Observable.create { observer in
       APIClient.getPlaylists(for: user) { result in
-          observer.on(.next(result))
-          observer.on(.completed)
-        }
-      return Disposables.create()
+        observer.on(.next(result))
+        observer.on(.completed)
       }
+      return Disposables.create()
     }
+  }
   
-  public func requestTrackList(for url: String) -> Observable<[Track]> {
+  private func requestTrackList(for url: String) -> Observable<[Track]> {
     return Observable.create { observer in
       APIClient.getTracks(for: url) { result in
         observer.on(.next(result))
@@ -68,7 +68,7 @@ class PlaylistDisplayerViewModel: NSObject {
   }
   
   
-  }
-  
+}
+
 
 

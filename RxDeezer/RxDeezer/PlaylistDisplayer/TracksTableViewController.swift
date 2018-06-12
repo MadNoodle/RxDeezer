@@ -10,57 +10,57 @@ import UIKit
 import RxSwift
 
 class TracksTableViewController: UITableViewController {
+  
   var tracks = [Track]()
   let disposeBag = DisposeBag()
-  
   let viewModel = PlaylistDisplayerViewModel.shared
-    override func viewDidLoad() {
+  let reuseId = "reuseId"
+  override func viewDidLoad() {
         super.viewDidLoad()
-      // Load user's playlists
-      // Grab trackList for the selected playlist
+      configureTableview()
+      // Load user's playlists tracks
+
       viewModel.tracklistData.asObservable()
         .subscribe(onNext: { [weak self] audioTracks in
           self?.tracks = audioTracks
-          for track in (self?.tracks)! {
-            print("data tab : \(track.title)")
-          }
           self?.tableView.reloadData()
         })
         .disposed(by: disposeBag)
-      tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseId")
-      tableView.delegate = self
-      tableView.dataSource = self
+      
+    
       
   }
-
+  
   override func viewWillAppear(_ animated: Bool) {
     tableView.reloadData()
   }
   
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+  func configureTableview() {
+  
+    
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.register(UINib(nibName: "TrackCell", bundle: nil), forCellReuseIdentifier: reuseId)
+  }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return tracks.count
     }
 
  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseId", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseId) as? TrackCell
 
-        cell.textLabel?.text = tracks[indexPath.row].title
-
-        return cell
+        cell?.titleLabel.text = tracks[indexPath.row].title
+        cell?.artistLabel.text = tracks[indexPath.row].artist
+        cell?.durationLabel.text = tracks[indexPath.row].duration.secondsToHoursMinutesSeconds()
+      
+        return cell!
     }
  
 

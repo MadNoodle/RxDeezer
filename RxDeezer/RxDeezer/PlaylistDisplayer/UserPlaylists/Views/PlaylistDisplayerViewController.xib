@@ -12,11 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaylistDisplayerViewController" customModule="RxDeezer" customModuleProvider="target">
             <connections>
-                <outlet property="buttonContainer" destination="FaJ-Dr-FZ5" id="0iQ-aM-i6Y"/>
-                <outlet property="buttonHeigth" destination="H5Y-iA-3ck" id="34p-zg-i9H"/>
                 <outlet property="collectionView" destination="TBR-NT-zx0" id="vSl-BI-1T9"/>
                 <outlet property="collectionViewBottomConstraint" destination="1ug-2c-fi9" id="x2O-iQ-Kq1"/>
-                <outlet property="tableView" destination="IBc-uQ-Igr" id="s6B-KB-0J1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,31 +33,13 @@
                     </collectionViewFlowLayout>
                     <cells/>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FaJ-Dr-FZ5">
-                    <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" id="H5Y-iA-3ck"/>
-                    </constraints>
-                </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IBc-uQ-Igr">
-                    <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="TBR-NT-zx0" secondAttribute="bottom" id="1ug-2c-fi9"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IBc-uQ-Igr" secondAttribute="trailing" id="2hA-iZ-rLZ"/>
-                <constraint firstItem="FaJ-Dr-FZ5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="EpM-sY-95y"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TBR-NT-zx0" secondAttribute="trailing" id="IYW-8E-2H0"/>
-                <constraint firstItem="FaJ-Dr-FZ5" firstAttribute="top" secondItem="TBR-NT-zx0" secondAttribute="bottom" id="Lcr-Z4-QIa"/>
-                <constraint firstAttribute="bottom" secondItem="IBc-uQ-Igr" secondAttribute="bottom" id="Pwk-lK-gub"/>
                 <constraint firstItem="TBR-NT-zx0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VHK-uc-9bI"/>
                 <constraint firstItem="TBR-NT-zx0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hhD-0c-8df"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FaJ-Dr-FZ5" secondAttribute="trailing" id="iPO-Fv-fQN"/>
-                <constraint firstItem="IBc-uQ-Igr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="o8n-5l-LCN"/>
-                <constraint firstItem="IBc-uQ-Igr" firstAttribute="top" secondItem="FaJ-Dr-FZ5" secondAttribute="bottom" id="xLe-3p-twI"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="72.5" y="59.5"/>
