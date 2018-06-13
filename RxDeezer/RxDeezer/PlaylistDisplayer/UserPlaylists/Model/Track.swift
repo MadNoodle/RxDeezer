@@ -12,7 +12,7 @@ import Foundation
 /// Properties are Mapped from Deezer user TrackList
 /// ### Example json fetching url: https://api.deezer.com/playlist/1549683151/tracks
 /// ### Documentation URL : https://developers.deezer.com/api
-struct Track {
+struct Track:Decodable {
   
   /// Song title
   var title: String = ""

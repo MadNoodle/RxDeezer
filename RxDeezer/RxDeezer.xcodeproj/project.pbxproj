@@ -20,8 +20,8 @@
 		B93BB0B120CBB97400C01345 /* PlaylistDisplayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93BB0B020CBB97400C01345 /* PlaylistDisplayerViewModel.swift */; };
 		B93FFAFE20CD4CEB008652E3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93FFAFD20CD4CEB008652E3 /* Constants.swift */; };
 		B93FFB0320CD5510008652E3 /* PlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93FFB0220CD5510008652E3 /* PlaylistCell.swift */; };
-		B952BA8420CD8CC80052FCAC /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B952BA8320CD8CC80052FCAC /* NetworkRouter.swift */; };
-		B952BA8A20CD936C0052FCAC /* DeezerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B952BA8920CD936C0052FCAC /* DeezerClient.swift */; };
+		B97B0C9B20D065C20053259B /* DeezerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97B0C9A20D065C20053259B /* DeezerClient.swift */; };
+		B97B0CA120D19DCF0053259B /* DeezerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97B0CA020D19DCF0053259B /* DeezerError.swift */; };
 		B9B550B820CE768E000FF14A /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B550B720CE768E000FF14A /* Playlist.swift */; };
 		B9B550BA20CEA81F000FF14A /* extensionUIImage+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B550B920CEA81F000FF14A /* extensionUIImage+Cache.swift */; };
 		B9B550BD20CEB7A2000FF14A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B550BB20CEB7A2000FF14A /* HomeViewController.swift */; };
@@ -73,8 +73,8 @@
 		B93BB0B020CBB97400C01345 /* PlaylistDisplayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDisplayerViewModel.swift; sourceTree = "<group>"; };
 		B93FFAFD20CD4CEB008652E3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B93FFB0220CD5510008652E3 /* PlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCell.swift; sourceTree = "<group>"; };
-		B952BA8320CD8CC80052FCAC /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
-		B952BA8920CD936C0052FCAC /* DeezerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeezerClient.swift; sourceTree = "<group>"; };
+		B97B0C9A20D065C20053259B /* DeezerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeezerClient.swift; sourceTree = "<group>"; };
+		B97B0CA020D19DCF0053259B /* DeezerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeezerError.swift; sourceTree = "<group>"; };
 		B9B550B720CE768E000FF14A /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		B9B550B920CEA81F000FF14A /* extensionUIImage+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extensionUIImage+Cache.swift"; sourceTree = "<group>"; };
 		B9B550BB20CEB7A2000FF14A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -168,10 +168,10 @@
 				B93BB0AA20CBB23900C01345 /* SupportingFiles */,
 				B93BB08820CBB23000C01345 /* Info.plist */,
 				B93FFAFD20CD4CEB008652E3 /* Constants.swift */,
-				B93BB0EC20CBDC3F00C01345 /* NetworkingLayer */,
 				B93FFAFF20CD51CC008652E3 /* Helpers */,
 				B93BB0AF20CBB94500C01345 /* PlaylistDisplayer */,
 				B9B550BB20CEB7A2000FF14A /* HomeViewController.swift */,
+				B97B0CA220D1AF4D0053259B /* Service */,
 			);
 			path = RxDeezer;
 			sourceTree = "<group>";
@@ -213,15 +213,6 @@
 			path = PlaylistDisplayer;
 			sourceTree = "<group>";
 		};
-		B93BB0EC20CBDC3F00C01345 /* NetworkingLayer */ = {
-			isa = PBXGroup;
-			children = (
-				B952BA8320CD8CC80052FCAC /* NetworkRouter.swift */,
-				B952BA8920CD936C0052FCAC /* DeezerClient.swift */,
-			);
-			path = NetworkingLayer;
-			sourceTree = "<group>";
-		};
 		B93FFAFF20CD51CC008652E3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,11 +223,20 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		B97B0CA220D1AF4D0053259B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B97B0C9A20D065C20053259B /* DeezerClient.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		B9B550BF20CED7E5000FF14A /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				B9B550B720CE768E000FF14A /* Playlist.swift */,
 				B9B550D620D0329B000FF14A /* Track.swift */,
+				B97B0CA020D19DCF0053259B /* DeezerError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -584,16 +584,16 @@
 				B93FFB0320CD5510008652E3 /* PlaylistCell.swift in Sources */,
 				B9B550BA20CEA81F000FF14A /* extensionUIImage+Cache.swift in Sources */,
 				B93FFAFE20CD4CEB008652E3 /* Constants.swift in Sources */,
-				B952BA8A20CD936C0052FCAC /* DeezerClient.swift in Sources */,
 				B9B550B820CE768E000FF14A /* Playlist.swift in Sources */,
 				B9B550D320CFF37F000FF14A /* TrackCell.swift in Sources */,
 				B9B550BD20CEB7A2000FF14A /* HomeViewController.swift in Sources */,
 				B93BB07D20CBB22F00C01345 /* AppDelegate.swift in Sources */,
+				B97B0C9B20D065C20053259B /* DeezerClient.swift in Sources */,
 				B9B550C620CED9B5000FF14A /* extensionUIView+Embed.swift in Sources */,
 				B9B550D720D0329B000FF14A /* Track.swift in Sources */,
 				B93BB0AD20CBB8DB00C01345 /* PlaylistDisplayerViewController.swift in Sources */,
-				B952BA8420CD8CC80052FCAC /* NetworkRouter.swift in Sources */,
 				B9B550C820CF2797000FF14A /* extensionInt+toHMS.swift in Sources */,
+				B97B0CA120D19DCF0053259B /* DeezerError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

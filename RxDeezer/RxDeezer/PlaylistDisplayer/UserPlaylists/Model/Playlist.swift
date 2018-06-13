@@ -13,7 +13,7 @@ import Foundation
 /// Properties are Mapped from Deezer user playlist
 /// Example json fetching url: https://api.deezer.com/user/2529/playlists
 /// Documentation URL : https://developers.deezer.com/api
-struct Playlist{
+struct Playlist: Decodable{
   
   /// Title of the playlist
   var title: String = ""

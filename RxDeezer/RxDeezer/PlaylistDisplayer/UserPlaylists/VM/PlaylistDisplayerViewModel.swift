@@ -30,42 +30,46 @@ class PlaylistDisplayerViewModel: NSObject {
   
   private func startObserving() {
     // fetch data for user
-    requestPlaylist(for: Constants.DevConfig.userId)
-      .subscribe( onNext: {
-        [weak self] dataList in
-        self?.playlistData.value = dataList
-      }).disposed(by: disposeBag)
+    DeezerApi.requestPlaylists(for: Constants.DevConfig.userId, parameters: nil)
+      .subscribe {
+        switch $0{
+          
+        case .success (let data):
+          self.playlistData.value = data
+        case .error(let error):
+          let serverError = error as? DeezerErrors
+          print("Error:\((serverError?.localizedDescription)!)")
+          
+        }
+      }.disposed(by: disposeBag)
     
     // Initialize selected playlist behavior in PlaylistCollection controller
-    selectedPlaylist.asObservable()
-      .subscribe(onNext: { [weak self] playlist in
-        // fetch tracks from deezer and store them in tracklistDat VAriable
-        APIClient.getTracks(for: playlist.trackList) { data in
-          self?.tracklistData.value = data
-        }
-      }).disposed(by: disposeBag)
+    selectedPlaylist.asObservable().subscribe({ [weak self] playlist in
+      self?.requestTrackList(for: (playlist.element?.trackList)!)
+    })
     
   }
   
-  private func requestPlaylist(for user: String) -> Observable<[Playlist]> {
-    return Observable.create { observer in
-      APIClient.getPlaylists(for: user) { result in
-        observer.on(.next(result))
-        observer.on(.completed)
-      }
-      return Disposables.create()
-    }
-  }
+
   
-  private func requestTrackList(for url: String) -> Observable<[Track]> {
-    return Observable.create { observer in
-      APIClient.getTracks(for: url) { result in
-        observer.on(.next(result))
-        observer.on(.completed)
-      }
-      return Disposables.create()
+  private func requestTrackList(for url: String) {
+    
+      DeezerApi.requestTracks(for: url, parameters: nil).subscribe {
+        switch $0{
+          
+        case .success (let data):
+          self.tracklistData.value = data
+        case .error(let error):
+          if let serverError = error as? DeezerErrors {
+            print(serverError.localizedDescription)
+          }
+          
+        }
+      }.disposed(by: disposeBag)
+      
+    
     }
-  }
+  
   
   
 }
