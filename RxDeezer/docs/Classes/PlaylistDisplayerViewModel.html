@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PlaylistDisplayerViewModel Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/PlaylistDisplayerViewModel" class="dashAnchor"></a>
+    <a title="PlaylistDisplayerViewModel Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (55% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        PlaylistDisplayerViewModel Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DeezerApi.html">DeezerApi</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HomeViewController.html">HomeViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PlaylistCell.html">PlaylistCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PlaylistDisplayerViewController.html">PlaylistDisplayerViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PlaylistDisplayerViewModel.html">PlaylistDisplayerViewModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RxReachability.html">RxReachability</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TrackCell.html">TrackCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TracksTableViewController.html">TracksTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserAlert.html">UserAlert</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:8RxDeezer10imageCacheSo7NSCacheCyyXlyXlGvp">imageCache</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/DeezerErrors.html">DeezerErrors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Reachability.html">Reachability</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Int.html">Int</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImageView.html">UIImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/API.html">API</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Constants.html">Constants</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Constants/DevConfig.html">– DevConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Playlist.html">Playlist</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Track.html">Track</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8RxDeezer0B6Objecta">DeezerObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8RxDeezer0B8Responsea">DeezerResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8RxDeezer10Parametersa">Parameters</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>PlaylistDisplayerViewModel</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">PlaylistDisplayerViewModel</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>The View Model is assocaited with HomeViewController.
+It prepares all the data to be displayed in the view and children&rsquo;s VCs</p>
+
+<p>&ndash; Data Flow:</p>
+<pre class="highlight swift"><code>
+       <span class="kd">init</span>                 <span class="n">react</span> <span class="n">to</span> <span class="n">newValue</span>
+<span class="n">userId</span> <span class="o">---&gt;</span> <span class="kt">Fetch</span> <span class="kt">Playlists</span><span class="o">-----------------&gt;</span><span class="kt">PlaylistData</span><span class="o">----------&gt;</span><span class="kt">TrackList</span><span class="o">-----</span> <span class="kt">Deallocate</span> <span class="kt">Tracklist</span> <span class="n">data</span>
+                                                 <span class="o">|</span>                     <span class="o">|</span>                <span class="o">|</span>
+                                                 <span class="o">|</span>                     <span class="o">|</span>                <span class="o">|</span>
+                                             <span class="n">update</span> <span class="kt">UI</span><span class="o">--&gt;</span><span class="n">update</span> <span class="n">header_</span><span class="o">|</span>            <span class="n">update</span> <span class="kt">UI</span>
+                                                             <span class="o">|</span>                          <span class="o">|</span>
+                                          <span class="n">user</span> <span class="kt">Input</span><span class="p">(</span><span class="n">tap</span><span class="p">)</span> <span class="n">___</span><span class="o">|</span>  <span class="n">user</span> <span class="kt">Input</span><span class="p">(</span><span class="kt">Scrollup</span><span class="p">)</span> <span class="n">___</span><span class="o">|</span>
+</code></pre>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/PROPERTIES"></a>
+                <a name="//apple_ref/swift/Section/PROPERTIES" class="dashAnchor"></a>
+                <a href="#/PROPERTIES">
+                  <h3 class="section-name">PROPERTIES</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer26PlaylistDisplayerViewModelC6sharedACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/shared" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer26PlaylistDisplayerViewModelC6sharedACvpZ">shared</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>entrance point for singleton pattern</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">shared</span> <span class="o">=</span> <span class="kt">PlaylistDisplayerViewModel</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RxDeezer@objc(cs)PlaylistDisplayerViewModel(im)init"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RxDeezer@objc(cs)PlaylistDisplayerViewModel(im)init">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Private initializer to match singleton pattern</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">private</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer26PlaylistDisplayerViewModelC12deezerClientAA0B3ApiCvp"></a>
+                    <a name="//apple_ref/swift/Property/deezerClient" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer26PlaylistDisplayerViewModelC12deezerClientAA0B3ApiCvp">deezerClient</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Start DeezerClient API</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">deezerClient</span> <span class="o">=</span> <span class="kt"><a href="../Classes/DeezerApi.html">DeezerApi</a></span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="kt"><a href="../Structs/Constants.html">Constants</a></span><span class="o">.</span><span class="kt">DevConfig</span><span class="o">.</span><span class="n">baseURL</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer26PlaylistDisplayerViewModelC10disposeBagXevp"></a>
+                    <a name="//apple_ref/swift/Property/disposeBag" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer26PlaylistDisplayerViewModelC10disposeBagXevp">disposeBag</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Bag that stores All disposables and dealloc them if neeeded</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">disposeBag</span> <span class="o">=</span> <span class="kt">DisposeBag</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/PROPERTIES%20TO%20EXPOSE"></a>
+                <a name="//apple_ref/swift/Section/PROPERTIES TO EXPOSE" class="dashAnchor"></a>
+                <a href="#/PROPERTIES%20TO%20EXPOSE">
+                  <h3 class="section-name">PROPERTIES TO EXPOSE</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer26PlaylistDisplayerViewModelC12playlistDataXevp"></a>
+                    <a name="//apple_ref/swift/Property/playlistData" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer26PlaylistDisplayerViewModelC12playlistDataXevp">playlistData</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Playlist Data Variable to expose Paylist for a user to other</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">playlistData</span> <span class="o">=</span> <span class="kt">Variable</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Playlist.html">Playlist</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">([])</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer26PlaylistDisplayerViewModelC08selectedC0Xevp"></a>
+                    <a name="//apple_ref/swift/Property/selectedPlaylist" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer26PlaylistDisplayerViewModelC08selectedC0Xevp">selectedPlaylist</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Playlist Data Variable to receive and expose Paylist for a user to other</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">selectedPlaylist</span> <span class="o">=</span> <span class="kt">Variable</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/Playlist.html">Playlist</a></span><span class="o">&gt;</span><span class="p">(</span><span class="kt"><a href="../Structs/Playlist.html">Playlist</a></span><span class="p">(</span><span class="nv">json</span><span class="p">:</span> <span class="p">[</span><span class="s">""</span><span class="p">:</span><span class="s">""</span><span class="p">])</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer26PlaylistDisplayerViewModelC11serverErrorXevp"></a>
+                    <a name="//apple_ref/swift/Property/serverError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer26PlaylistDisplayerViewModelC11serverErrorXevp">serverError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Server error Variable to expose possible errors in Alert</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">serverError</span> <span class="o">=</span> <span class="kt">Variable</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">""</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer26PlaylistDisplayerViewModelC13tracklistDataXevp"></a>
+                    <a name="//apple_ref/swift/Property/tracklistData" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer26PlaylistDisplayerViewModelC13tracklistDataXevp">tracklistData</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tracks Data Variable to expose Paylist for a user to other</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">tracklistData</span> <span class="o">=</span> <span class="kt">Variable</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Structs/Track.html">Track</a></span><span class="p">]</span><span class="o">&gt;</span><span class="p">([])</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer26PlaylistDisplayerViewModelC14startObserving33_D26E58747F2AF28BE8FFDE222C269189LLySSF"></a>
+                    <a name="//apple_ref/swift/Method/startObserving(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer26PlaylistDisplayerViewModelC14startObserving33_D26E58747F2AF28BE8FFDE222C269189LLySSF">startObserving(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Start observing all variables.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">startObserving</span><span class="p">(</span><span class="n">_</span> <span class="nv">user</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>user</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String userId</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer26PlaylistDisplayerViewModelC16requestTrackList33_D26E58747F2AF28BE8FFDE222C269189LLySS3for_tF"></a>
+                    <a name="//apple_ref/swift/Method/requestTrackList(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer26PlaylistDisplayerViewModelC16requestTrackList33_D26E58747F2AF28BE8FFDE222C269189LLySS3for_tF">requestTrackList(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Calls The Deezer Client to retrieve all tracks for a playlist</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">requestTrackList</span><span class="p">(</span><span class="k">for</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer26PlaylistDisplayerViewModelC05parseC0SayAA0C0VGs10DictionaryVySSypG4data_tF"></a>
+                    <a name="//apple_ref/swift/Method/parsePlaylist(data:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer26PlaylistDisplayerViewModelC05parseC0SayAA0C0VGs10DictionaryVySSypG4data_tF">parsePlaylist(data:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Converts Server response to Local model Playlist</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">parsePlaylist</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8RxDeezer0B6Objecta">DeezerObject</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Structs/Playlist.html">Playlist</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>DeezerObject containing data and error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>[Playlist]</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer26PlaylistDisplayerViewModelC05parseB6TracksSayAA5TrackVGSays10DictionaryVySSypGG4data_tF"></a>
+                    <a name="//apple_ref/swift/Method/parseDeezerTracks(data:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer26PlaylistDisplayerViewModelC05parseB6TracksSayAA5TrackVGSays10DictionaryVySSypGG4data_tF">parseDeezerTracks(data:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Converts Server response to Local model Tracks</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">parseDeezerTracks</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Typealiases.html#/s:8RxDeezer0B6Objecta">DeezerObject</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Structs/Track.html">Track</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>DeezerObject containing data and error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>[Track]</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-06-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

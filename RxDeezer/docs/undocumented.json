@@ -1,0 +1,495 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Constants.swift",
+      "line": 12,
+      "symbol": "Constants",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Constants.swift",
+      "line": 14,
+      "symbol": "Constants.DevConfig",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Model/Track.swift",
+      "line": 24,
+      "symbol": "Track.init(json:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/Cells/PlaylistCell.swift",
+      "line": 15,
+      "symbol": "PlaylistCell.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/Cells/PlaylistCell.swift",
+      "line": 52,
+      "symbol": "PlaylistCell.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/Cells/TrackCell.swift",
+      "line": 14,
+      "symbol": "TrackCell.titleLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/Cells/TrackCell.swift",
+      "line": 15,
+      "symbol": "TrackCell.artistLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/Cells/TrackCell.swift",
+      "line": 16,
+      "symbol": "TrackCell.durationLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/Cells/TrackCell.swift",
+      "line": 18,
+      "symbol": "TrackCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/Cells/TrackCell.swift",
+      "line": 23,
+      "symbol": "TrackCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/PlaylistDisplayerViewController.swift",
+      "line": null,
+      "symbol": "PlaylistDisplayerViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/PlaylistDisplayerViewController.swift",
+      "line": null,
+      "symbol": "PlaylistDisplayerViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/PlaylistDisplayerViewController.swift",
+      "line": 13,
+      "symbol": "PlaylistDisplayerViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/PlaylistDisplayerViewController.swift",
+      "line": 48,
+      "symbol": "PlaylistDisplayerViewController.collectionView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/PlaylistDisplayerViewController.swift",
+      "line": 53,
+      "symbol": "PlaylistDisplayerViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/PlaylistDisplayerViewController.swift",
+      "line": 91,
+      "symbol": "PlaylistDisplayerViewController.collectionView(_:layout:insetForSectionAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/PlaylistDisplayerViewController.swift",
+      "line": 95,
+      "symbol": "PlaylistDisplayerViewController.collectionView(_:layout:minimumInteritemSpacingForSectionAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/PlaylistDisplayerViewController.swift",
+      "line": 99,
+      "symbol": "PlaylistDisplayerViewController.collectionView(_:layout:minimumLineSpacingForSectionAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/PlaylistDisplayerViewController.swift",
+      "line": 103,
+      "symbol": "PlaylistDisplayerViewController.collectionView(_:layout:sizeForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/PlaylistDisplayerViewController.swift",
+      "line": 114,
+      "symbol": "PlaylistDisplayerViewController.collectionView(_:numberOfItemsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/PlaylistDisplayerViewController.swift",
+      "line": 118,
+      "symbol": "PlaylistDisplayerViewController.collectionView(_:cellForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/PlaylistDisplayerViewController.swift",
+      "line": 127,
+      "symbol": "PlaylistDisplayerViewController.collectionView(_:didSelectItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/PlaylistDisplayerViewController.swift",
+      "line": 133,
+      "symbol": "PlaylistDisplayerViewController.configure(_:for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/TracksTableViewController.swift",
+      "line": 35,
+      "symbol": "TracksTableViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/TracksTableViewController.swift",
+      "line": 41,
+      "symbol": "TracksTableViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/TracksTableViewController.swift",
+      "line": 69,
+      "symbol": "TracksTableViewController.numberOfSections(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/TracksTableViewController.swift",
+      "line": 73,
+      "symbol": "TracksTableViewController.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/ChildrenVc/TracksTableViewController.swift",
+      "line": 78,
+      "symbol": "TracksTableViewController.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/HomeViewController.swift",
+      "line": 127,
+      "symbol": "HomeViewController.treshold",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/HomeViewController.swift",
+      "line": 128,
+      "symbol": "HomeViewController.stepZero",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/HomeViewController.swift",
+      "line": 129,
+      "symbol": "HomeViewController.stepOne",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/HomeViewController.swift",
+      "line": 130,
+      "symbol": "HomeViewController.stepTwo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/HomeViewController.swift",
+      "line": 131,
+      "symbol": "HomeViewController.scrollState",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/HomeViewController.swift",
+      "line": 134,
+      "symbol": "HomeViewController.viewModel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/HomeViewController.swift",
+      "line": 135,
+      "symbol": "HomeViewController.tracks",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/HomeViewController.swift",
+      "line": 136,
+      "symbol": "HomeViewController.playlistCollectionController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/HomeViewController.swift",
+      "line": 137,
+      "symbol": "HomeViewController.disposeBag",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/HomeViewController.swift",
+      "line": 141,
+      "symbol": "HomeViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/PlaylistDisplayer/Views/HomeViewController.swift",
+      "line": 231,
+      "symbol": "HomeViewController.autoScroll()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/SupportingFiles/AppDelegate.swift",
+      "line": 13,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/SupportingFiles/AppDelegate.swift",
+      "line": 15,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/SupportingFiles/AppDelegate.swift",
+      "line": 18,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/SupportingFiles/AppDelegate.swift",
+      "line": 28,
+      "symbol": "AppDelegate.applicationWillResignActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/SupportingFiles/AppDelegate.swift",
+      "line": 33,
+      "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/SupportingFiles/AppDelegate.swift",
+      "line": 38,
+      "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/SupportingFiles/AppDelegate.swift",
+      "line": 42,
+      "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/SupportingFiles/AppDelegate.swift",
+      "line": 46,
+      "symbol": "AppDelegate.applicationWillTerminate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/NetworkingService/DeezerClient.swift",
+      "line": 5,
+      "symbol": "Parameters",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/NetworkingService/DeezerClient.swift",
+      "line": 6,
+      "symbol": "DeezerObject",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/NetworkingService/DeezerClient.swift",
+      "line": 7,
+      "symbol": "DeezerResponse",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/NetworkingService/DeezerClient.swift",
+      "line": 13,
+      "symbol": "API.baseUrl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/NetworkingService/DeezerClient.swift",
+      "line": 14,
+      "symbol": "API.requestPlaylists(for:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/NetworkingService/DeezerClient.swift",
+      "line": 15,
+      "symbol": "API.requestTracks(for:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/NetworkingService/DeezerError.swift",
+      "line": 16,
+      "symbol": "DeezerErrors.quotaException",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/NetworkingService/DeezerError.swift",
+      "line": 17,
+      "symbol": "DeezerErrors.itemsLimitExceeded",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/NetworkingService/DeezerError.swift",
+      "line": 18,
+      "symbol": "DeezerErrors.OAuthPermissionException",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/NetworkingService/DeezerError.swift",
+      "line": 19,
+      "symbol": "DeezerErrors.invalidToken",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/NetworkingService/DeezerError.swift",
+      "line": 20,
+      "symbol": "DeezerErrors.parameterException",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/NetworkingService/DeezerError.swift",
+      "line": 21,
+      "symbol": "DeezerErrors.missingParameters",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/NetworkingService/DeezerError.swift",
+      "line": 22,
+      "symbol": "DeezerErrors.invalidQuery",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/NetworkingService/DeezerError.swift",
+      "line": 23,
+      "symbol": "DeezerErrors.busyService",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/NetworkingService/DeezerError.swift",
+      "line": 24,
+      "symbol": "DeezerErrors.noData",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/NetworkingService/DeezerError.swift",
+      "line": 25,
+      "symbol": "DeezerErrors.unknownError",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/Reachability.swift",
+      "line": 18,
+      "symbol": "Reachability.offline",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/Reachability.swift",
+      "line": 19,
+      "symbol": "Reachability.online",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/Reachability.swift",
+      "line": 20,
+      "symbol": "Reachability.unknown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/Reachability.swift",
+      "line": 22,
+      "symbol": "Reachability.init(reachabilityFlags:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/Services/Reachability.swift",
+      "line": 42,
+      "symbol": "RxReachability.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/extensions/extensionInt+toHMS.swift",
+      "line": 13,
+      "symbol": "Int.secondsToHoursMinutesSeconds()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer/RxDeezer/Utils/extensions/extensionUIView+Embed.swift",
+      "line": 15,
+      "symbol": "UIViewController.embed(to:in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/mathieujanneau/Desktop/RxDeezer/RxDeezer"
+}

@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HomeViewController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/HomeViewController" class="dashAnchor"></a>
+    <a title="HomeViewController Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (55% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        HomeViewController Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DeezerApi.html">DeezerApi</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/HomeViewController.html">HomeViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PlaylistCell.html">PlaylistCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PlaylistDisplayerViewController.html">PlaylistDisplayerViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PlaylistDisplayerViewModel.html">PlaylistDisplayerViewModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RxReachability.html">RxReachability</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TrackCell.html">TrackCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TracksTableViewController.html">TracksTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserAlert.html">UserAlert</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:8RxDeezer10imageCacheSo7NSCacheCyyXlyXlGvp">imageCache</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/DeezerErrors.html">DeezerErrors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Reachability.html">Reachability</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Int.html">Int</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImageView.html">UIImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/API.html">API</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Constants.html">Constants</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Constants/DevConfig.html">– DevConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Playlist.html">Playlist</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Track.html">Track</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8RxDeezer0B6Objecta">DeezerObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8RxDeezer0B8Responsea">DeezerResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8RxDeezer10Parametersa">Parameters</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>HomeViewController</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">HomeViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">UIScrollViewDelegate</span></code></pre>
+
+                </div>
+              </div>
+            <p>Root View Controller that contains 3 containers embedded in A UIScrollView
+Functionnalities:</p>
+
+<ul>
+<li>Present User&rsquo;s playlist in a 3 columns collection</li>
+<li>Allow the user to discover a summary of each playlist on celltap</li>
+<li>Display Tracklist incl. title - artist - duration</li>
+</ul>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UI%20CONTAINERS"></a>
+                <a name="//apple_ref/swift/Section/UI CONTAINERS" class="dashAnchor"></a>
+                <a href="#/UI%20CONTAINERS">
+                  <h3 class="section-name">UI CONTAINERS</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC06scrollD0So08UIScrollD0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/scrollView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC06scrollD0So08UIScrollD0Cvp">scrollView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>ScrollView that contains the whole navigation</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">lazy</span> <span class="k">var</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span> <span class="o">=</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC19collectionContainerSo6UIViewCvp"></a>
+                    <a name="//apple_ref/swift/Property/collectionContainer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC19collectionContainerSo6UIViewCvp">collectionContainer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Playlists CollectionView controller container</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">collectionContainer</span><span class="p">:</span> <span class="kt">UIView</span> <span class="o">=</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC14playlistHeaderSo6UIViewCvp"></a>
+                    <a name="//apple_ref/swift/Property/playlistHeader" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC14playlistHeaderSo6UIViewCvp">playlistHeader</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Playlist header that presents: Title, thumbnail, duration &amp; creator</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">lazy</span> <span class="k">var</span> <span class="nv">playlistHeader</span> <span class="p">:</span> <span class="kt">UIView</span> <span class="o">=</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC11tracksTableSo6UIViewCvp"></a>
+                    <a name="//apple_ref/swift/Property/tracksTable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC11tracksTableSo6UIViewCvp">tracksTable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tracks TableView ChildController container</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">tracksTable</span><span class="p">:</span> <span class="kt">UIView</span> <span class="o">=</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UI%20ELEMENTS"></a>
+                <a name="//apple_ref/swift/Section/UI ELEMENTS" class="dashAnchor"></a>
+                <a href="#/UI%20ELEMENTS">
+                  <h3 class="section-name">UI ELEMENTS</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC9thumbnailSo07UIImageD0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/thumbnail" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC9thumbnailSo07UIImageD0Cvp">thumbnail</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Playlist thumbnailCover Image</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">lazy</span> <span class="k">var</span> <span class="nv">thumbnail</span><span class="p">:</span> <span class="kt">UIImageView</span> <span class="o">=</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC13playlistTitleSo7UILabelCvp"></a>
+                    <a name="//apple_ref/swift/Property/playlistTitle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC13playlistTitleSo7UILabelCvp">playlistTitle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Playlist Title</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">lazy</span> <span class="k">var</span> <span class="nv">playlistTitle</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC16playlistDurationSo7UILabelCvp"></a>
+                    <a name="//apple_ref/swift/Property/playlistDuration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC16playlistDurationSo7UILabelCvp">playlistDuration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Playlist total duration format hh:mm:ss</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">lazy</span> <span class="k">var</span> <span class="nv">playlistDuration</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC15playlistCreatorSo7UILabelCvp"></a>
+                    <a name="//apple_ref/swift/Property/playlistCreator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC15playlistCreatorSo7UILabelCvp">playlistCreator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Playlist&rsquo;s owner</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">lazy</span> <span class="k">var</span> <span class="nv">playlistCreator</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/SCROLL%20PROPERTIES"></a>
+                <a name="//apple_ref/swift/Section/SCROLL PROPERTIES" class="dashAnchor"></a>
+                <a href="#/SCROLL%20PROPERTIES">
+                  <h3 class="section-name">SCROLL PROPERTIES</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC8treshold12CoreGraphics7CGFloatVvp"></a>
+                    <a name="//apple_ref/swift/Property/treshold" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC8treshold12CoreGraphics7CGFloatVvp">treshold</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">treshold</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">35</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC8stepZeroSC7CGPointVvp"></a>
+                    <a name="//apple_ref/swift/Property/stepZero" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC8stepZeroSC7CGPointVvp">stepZero</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">stepZero</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">20</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC7stepOneSC7CGPointVvp"></a>
+                    <a name="//apple_ref/swift/Property/stepOne" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC7stepOneSC7CGPointVvp">stepOne</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">stepOne</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">220</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC7stepTwoSC7CGPointVvp"></a>
+                    <a name="//apple_ref/swift/Property/stepTwo" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC7stepTwoSC7CGPointVvp">stepTwo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">stepTwo</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">680</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC11scrollStateXevp"></a>
+                    <a name="//apple_ref/swift/Property/scrollState" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC11scrollStateXevp">scrollState</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">scrollState</span> <span class="o">=</span> <span class="kt">Variable</span><span class="o">&lt;</span><span class="kt">CGFloat</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC9viewModelAA017PlaylistDisplayerdG0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/viewModel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC9viewModelAA017PlaylistDisplayerdG0Cvp">viewModel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">viewModel</span> <span class="o">=</span> <span class="kt"><a href="../Classes/PlaylistDisplayerViewModel.html">PlaylistDisplayerViewModel</a></span><span class="o">.</span><span class="n">shared</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC6tracksSayAA5TrackVGvp"></a>
+                    <a name="//apple_ref/swift/Property/tracks" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC6tracksSayAA5TrackVGvp">tracks</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">tracks</span> <span class="o">=</span> <span class="p">[</span><span class="kt"><a href="../Structs/Track.html">Track</a></span><span class="p">]()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC018playlistCollectionE0AA017PlaylistDisplayerdE0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/playlistCollectionController" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC018playlistCollectionE0AA017PlaylistDisplayerdE0Cvp">playlistCollectionController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">playlistCollectionController</span> <span class="o">=</span> <span class="kt"><a href="../Classes/PlaylistDisplayerViewController.html">PlaylistDisplayerViewController</a></span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC10disposeBagXevp"></a>
+                    <a name="//apple_ref/swift/Property/disposeBag" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC10disposeBagXevp">disposeBag</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">disposeBag</span> <span class="o">=</span> <span class="kt">DisposeBag</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/LIFECYCLE%20METHODS"></a>
+                <a name="//apple_ref/swift/Section/LIFECYCLE METHODS" class="dashAnchor"></a>
+                <a href="#/LIFECYCLE%20METHODS">
+                  <h3 class="section-name">LIFECYCLE METHODS</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RxDeezer@objc(cs)HomeViewController(im)viewDidLoad"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RxDeezer@objc(cs)HomeViewController(im)viewDidLoad">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC21configureDataBindings33_F4EEFD1E6C08A0DF6B1339DF55E41FA5LLyyF"></a>
+                    <a name="//apple_ref/swift/Method/configureDataBindings()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC21configureDataBindings33_F4EEFD1E6C08A0DF6B1339DF55E41FA5LLyyF">configureDataBindings()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize subscription to retrieve data from View Model</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">configureDataBindings</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/SCROLL%20SETUP"></a>
+                <a name="//apple_ref/swift/Section/SCROLL SETUP" class="dashAnchor"></a>
+                <a href="#/SCROLL%20SETUP">
+                  <h3 class="section-name">SCROLL SETUP</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC18configureUIBinding33_F4EEFD1E6C08A0DF6B1339DF55E41FA5LLyyF"></a>
+                    <a name="//apple_ref/swift/Method/configureUIBinding()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC18configureUIBinding33_F4EEFD1E6C08A0DF6B1339DF55E41FA5LLyyF">configureUIBinding()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Configure Binding for scrollContentOffset value to enable
+user to scroll and autoscroll to original offset</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">configureUIBinding</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC011setupScrollD033_F4EEFD1E6C08A0DF6B1339DF55E41FA5LLyyF"></a>
+                    <a name="//apple_ref/swift/Method/setupScrollView()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC011setupScrollD033_F4EEFD1E6C08A0DF6B1339DF55E41FA5LLyyF">setupScrollView()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handles All UISetup for the app</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupScrollView</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RxDeezer@objc(cs)HomeViewController(im)scrollViewDidScroll:"></a>
+                    <a name="//apple_ref/swift/Method/scrollViewDidScroll(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RxDeezer@objc(cs)HomeViewController(im)scrollViewDidScroll:">scrollViewDidScroll(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delegate method to handle behavior associated with scroll</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">scrollViewDidScroll</span><span class="p">(</span><span class="n">_</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>scrollView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>UIScrollView</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC10autoScroll33_F4EEFD1E6C08A0DF6B1339DF55E41FA5LLyyF"></a>
+                    <a name="//apple_ref/swift/Method/autoScroll()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC10autoScroll33_F4EEFD1E6C08A0DF6B1339DF55E41FA5LLyyF">autoScroll()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">autoScroll</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UI%20SETUP"></a>
+                <a name="//apple_ref/swift/Section/UI SETUP" class="dashAnchor"></a>
+                <a href="#/UI%20SETUP">
+                  <h3 class="section-name">UI SETUP</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC13setupSubViews33_F4EEFD1E6C08A0DF6B1339DF55E41FA5LLyyF"></a>
+                    <a name="//apple_ref/swift/Method/setupSubViews()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC13setupSubViews33_F4EEFD1E6C08A0DF6B1339DF55E41FA5LLyyF">setupSubViews()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add Subviews in main scrollView container</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">fileprivate</span> <span class="kd">func</span> <span class="nf">setupSubViews</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8RxDeezer18HomeViewControllerC16setupConstraints33_F4EEFD1E6C08A0DF6B1339DF55E41FA5LLyyF"></a>
+                    <a name="//apple_ref/swift/Method/setupConstraints()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8RxDeezer18HomeViewControllerC16setupConstraints33_F4EEFD1E6C08A0DF6B1339DF55E41FA5LLyyF">setupConstraints()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handles all contraints for all views using Anchor system</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupConstraints</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-06-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

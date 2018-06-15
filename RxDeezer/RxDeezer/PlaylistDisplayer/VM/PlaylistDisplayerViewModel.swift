@@ -14,6 +14,7 @@ import RxSwift
  It prepares all the data to be displayed in the view and children's VCs
  
  -- Data Flow:
+ ```
  
         init                 react to newValue
  userId ---> Fetch Playlists----------------->PlaylistData---------->TrackList----- Deallocate Tracklist data
@@ -22,7 +23,7 @@ import RxSwift
                                               update UI-->update header_|            update UI
                                                               |                          |
                                            user Input(tap) ___|  user Input(Scrollup) ___|
- 
+ ```
  */
 class PlaylistDisplayerViewModel: NSObject {
   
@@ -70,7 +71,7 @@ class PlaylistDisplayerViewModel: NSObject {
           self.playlistData.value = self.parsePlaylist(data: data.response as! DeezerObject)
           
         // Server Connection error cannot be tested
-        case .error(let error):
+        case .error:
           break
         }
       }.disposed(by: disposeBag)
@@ -100,7 +101,8 @@ class PlaylistDisplayerViewModel: NSObject {
         // display data
         self.tracklistData.value = self.parseDeezerTracks(data: data.response as! [DeezerObject])
        // Server connection error case
-      case .error(let error):
+      case .error:
+        // not implemented
         break
       }
       }.disposed(by: disposeBag)
