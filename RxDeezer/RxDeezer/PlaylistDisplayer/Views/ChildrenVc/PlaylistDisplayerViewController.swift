@@ -12,7 +12,9 @@ import RxSwift
 
 class PlaylistDisplayerViewController: UIViewController {
   
-  // MARK: - DATA PROPERTIES
+  // /////////////////////// //
+  // MARK: - DATA PROPERTIES //
+  // /////////////////////// //
   
   /// Common View Model Instance to fetch and exchange data
   let viewModel = PlaylistDisplayerViewModel.shared
@@ -22,29 +24,51 @@ class PlaylistDisplayerViewController: UIViewController {
   var playlists = [Playlist]()
   /// Variable used to emit data when user select a playlist
   var trackList = Variable<String?>("")
+ 
   
-  // MARK: - UI PROPERTIES
-  let offset: CGFloat = 60
+  // ///////////////////// //
+  // MARK: - UI PROPERTIES //
+  // ///////////////////// //
+  
+  /// Activity indicator to display while data are loading
+  lazy var loader: UIActivityIndicatorView = {
+    let _loader = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    _loader.color = Constants.DevConfig.complementaryColor
+    return _loader
+  }()
+  
+  /// Custom cell reusable id
   let reuseId = "cell"
+  /// height for label container in Custom cell
+  let offset: CGFloat = 60
   
-  // MARK: - OUTLETS
+  // /////////////// //
+  // MARK: - OUTLETS //
+  // /////////////// //
   @IBOutlet weak var collectionView: UICollectionView!
-  @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
+
   
   
   // MARK: - VIEW LIFECYCLE METHODS
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.addSubview(loader)
+    loader.frame = UIScreen.main.bounds
+    loader.startAnimating()
     configureDataBinding()
   }
   
+  
   /// Initiate listening to ViewModel Variable to fetch data from remote server( Deezer)
   func configureDataBinding() {
-    // Load user's playlists
+    // Load user's playlists y observing viewModel Playlist data
     viewModel.playlistData.asObservable()
       .subscribe(onNext: { [weak self] userPlaylists in
+        // update UI
         self?.playlists = userPlaylists
         self?.configureCollectionView()
+        self?.loader.stopAnimating()
+        self?.loader.removeFromSuperview()
       })
       .disposed(by: disposeBag)
   }

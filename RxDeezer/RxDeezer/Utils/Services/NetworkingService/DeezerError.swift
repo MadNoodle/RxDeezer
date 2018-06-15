@@ -8,6 +8,10 @@
 
 import Foundation
 
+/**
+ This enum describes all the Deezer Api internal Server Errors
+ DOCUMENTATION : https://developers.deezer.com/api/errors
+ */
 enum DeezerErrors: Error {
   case quotaException
   case itemsLimitExceeded
@@ -20,6 +24,7 @@ enum DeezerErrors: Error {
   case noData
   case unknownError
   
+  /// NSLocalized Strings for errors
   var localizedDescription: String {
     switch self {
     case .quotaException:
@@ -45,6 +50,10 @@ enum DeezerErrors: Error {
     }
   }
   
+  /// Converts code to error string
+  ///
+  /// - Parameter errorCode: Int
+  /// - Returns: DeezerError
   static func checkErrorCode(_ errorCode: Int) -> DeezerErrors {
     switch errorCode {
     case 4:

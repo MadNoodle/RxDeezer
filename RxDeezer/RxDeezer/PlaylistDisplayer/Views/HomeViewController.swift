@@ -29,6 +29,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     return view
   }()
   
+ 
   /// Playlists CollectionView controller container
   let collectionContainer: UIView = {
     let container = UIView()
@@ -135,15 +136,29 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
   let playlistCollectionController = PlaylistDisplayerViewController()
   let disposeBag = DisposeBag()
   
+
   // MARK: - LIFECYCLE METHODS
   override func viewDidLoad() {
     super.viewDidLoad()
     configureDataBindings()
     view.addSubview(scrollView)
     setupScrollView()
-    configureUIBinding()
+   
+    // Check for internet access
+    if RxReachability.shared.startMonitor(Constants.DevConfig.baseURL){
+
+      // init Deezer Services
+      configureUIBinding()
+      
+    } else {
+      //Displays an alert if device is not connected to internet
+      let alert  = UIAlertController(title: "Warning",
+                                     message: "Please connect to the internet to have access to this service",
+                                     preferredStyle: .alert)
+      self.present(alert, animated: true)
+    }
   }
-  
+
   /// Initialize subscription to retrieve data from View Model
   private func configureDataBindings() {
     // Update HeaderView with currently selected playlist info
@@ -161,6 +176,13 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
         self?.tracks = audioTracks
       })
       .disposed(by: disposeBag)
+    
+    // listen to connections errors
+    
+    viewModel.serverError.asObservable().subscribe(onNext: {[weak self] errorMessage in
+      UserAlert.show(title: "Error", message: errorMessage, controller: self!)
+      
+    }).disposed(by: disposeBag)
   }
   
   // MARK: - SCROLL SETUP
@@ -168,8 +190,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
   /// Configure Binding for scrollContentOffset value to enable
   /// user to scroll and autoscroll to original offset
   private func configureUIBinding() {
-    scrollState.asObservable().subscribe (onNext: {[weak self] value in
-      print(value)
+    // Skip(1) prevent a sligth contentoffset bug
+    scrollState.asObservable().skip(1).subscribe (onNext: {[weak self] value in
       self?.autoScroll()
       }
       ).disposed(by: disposeBag)
@@ -185,6 +207,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     self.scrollView.isScrollEnabled = false
     // Reset contentOffset
     scrollView.contentOffset = stepZero
+    
     // add child view controller view to containers
     let playlistCollectionController = PlaylistDisplayerViewController()
     playlistCollectionController.embed(to: self, in: collectionContainer)
@@ -200,6 +223,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     // Assign contentoffset Y value to Variable<CGFloat> scrollState
     // this value is used by autoScroll()
     scrollState.value = scrollView.contentOffset.y
+    scrollView.setNeedsLayout()
+    collectionContainer.setNeedsLayout()
+    
   }
   
   private func autoScroll() {
@@ -207,15 +233,18 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     if scrollView.isScrollEnabled && scrollView.contentOffset.y <= (playlistHeader.frame.height - treshold) {
       scrollView.setContentOffset(stepZero, animated: true)
       scrollView.isScrollEnabled = false
+      tracksTable.isUserInteractionEnabled = false
+      
       // Sets status bar to black color
       UIApplication.shared.statusBarStyle = .default
     } else if scrollView.contentOffset.y > (playlistHeader.frame.height - treshold) {
       // set status bar to white over blue on header
       UIApplication.shared.statusBarStyle = .lightContent
       scrollView.isScrollEnabled = true
+      tracksTable.isUserInteractionEnabled = true
     }
   }
-  
+ 
   // MARK: - UI SETUP
   /// Add Subviews in main scrollView container
   fileprivate func setupSubViews() {
@@ -223,6 +252,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate {
     scrollView.addSubview(collectionContainer)
     scrollView.addSubview(playlistHeader)
     scrollView.addSubview(tracksTable)
+   
     // Nest subviews in header
     playlistHeader.addSubview(thumbnail)
     playlistHeader.addSubview(playlistTitle)

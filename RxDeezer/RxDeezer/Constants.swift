@@ -10,13 +10,14 @@ import Foundation
 import UIKit
 
 struct Constants {
-  
-  // Should be private bu opened for purpose demo
- 
+
     struct DevConfig {
+    
+      /// User id to be displayed in Home ViewController ( enter "-" to test for errors)
       static let userId = "1483650282"
+      /// Base url to access deezer RESTAPI
       static let baseURL =  "https://api.deezer.com/"
-     
+      /// HomeViewController PlaylistHeader background color
       static let complementaryColor = UIColor(red: 28/255, green: 56/255, blue: 95/255, alpha: 1)
     }
   }
