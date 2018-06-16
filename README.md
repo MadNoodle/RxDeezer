@@ -38,7 +38,7 @@ $ cd /RxDeezer
 $ pod install
 ```
 ##Documentation
-[Read detailed Documentation](https://github.com/MadNoodle/RxDeezer/docs/index.html)
+[Read detailed Documentation](https://madnoodle.github.io/RxDeezer/docs/index.html)
 ## 📫 Author
 
 Mathieu Janneau - <mjanneau@gmail.com>
